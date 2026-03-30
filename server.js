@@ -11,8 +11,8 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-//app.use(cors());
-app.use(
+app.use(cors());
+{/*app.use(
   cors({
     origin: [
       "http://localhost:5173",
@@ -21,7 +21,7 @@ app.use(
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
   })
-);
+);*/}
 
 // Security headers
 app.use(helmet());
