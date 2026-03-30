@@ -11,7 +11,17 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-app.use(cors());
+//app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://todo-list-app-frontend-eta.vercel.app",
+    ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
 
 // Security headers
 app.use(helmet());
